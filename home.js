@@ -41,7 +41,12 @@ looker.plugins.visualizations.add({
             .menu-container {
                 height: 100vh;
                 width: 300px;
+                padding: 30px 30px;
                 background-color: #29479F;
+            }
+
+            #logo {
+                width: 150px;
             }
         </style>
         `
@@ -65,6 +70,13 @@ looker.plugins.visualizations.add({
         function create_menu(queryResponse) {
             const menuContainer = document.createElement('div');
             menuContainer.classList.add('menu-container');
+            
+            const logoImg = document.querySelector('img')
+            logoImg.src = "https://gruposervopa.com.br/themes/theme-grupo-servopa/assets/img/logos/servopa-grupo-branco.svg"
+            logoImg.id = 'logo';
+            menuContainer.appendChild(logoImg)
+
+
             homeContainer.appendChild(menuContainer);
         }
 
