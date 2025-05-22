@@ -42,6 +42,8 @@ looker.plugins.visualizations.add({
             }
         </style>
         `
+        
+        this._tableContainer = element.appendChild(document.createElement("div"));
     },
 
     updateAsync: function(data, element, config, queryResponse, details, done) {
