@@ -71,7 +71,7 @@ looker.plugins.visualizations.add({
             const menuContainer = document.createElement('div');
             menuContainer.classList.add('menu-container');
             
-            const logoImg = document.querySelector('img')
+            const logoImg = document.createElement('img')
             logoImg.src = "https://gruposervopa.com.br/themes/theme-grupo-servopa/assets/img/logos/servopa-grupo-branco.svg"
             logoImg.id = 'logo';
             menuContainer.appendChild(logoImg)
