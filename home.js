@@ -102,6 +102,15 @@ looker.plugins.visualizations.add({
                 margin-top: 15px;
             }
 
+            .cards-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color:rgb(206, 206, 206);
+            }
+
         </style>
         `
 
@@ -138,6 +147,12 @@ looker.plugins.visualizations.add({
         titlesDiv.appendChild(title)
 
         homeContainer.appendChild(titlesDiv)
+
+        const cardsContainer = document.createElement('div');
+        cardsContainer.classList = "cards-container";
+        cardsContainer.innerHTML = "Selecione uma pasta para visualizar o conteúdo";
+        homeContainer.appendChild(cardsContainer);
+
 
         console.log(queryResponse)
         console.log(data)
@@ -183,6 +198,10 @@ looker.plugins.visualizations.add({
 
 
             homeContainer.appendChild(menuContainer);
+        }
+
+        function load_cards() {
+
         }
 
 }});
