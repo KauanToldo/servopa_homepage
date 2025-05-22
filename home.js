@@ -5,7 +5,6 @@ looker.plugins.visualizations.add({
       
     },
     create: function(element, config) {
-      this._tableContainer = element.appendChild(document.createElement("div"));
       this._tableContainer.innerHTML = `
         <style>
             #vis {
