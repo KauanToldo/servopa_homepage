@@ -51,6 +51,21 @@ looker.plugins.visualizations.add({
                 width: 150px;
                 margin-top: 40px
             }
+
+            .list-folders {
+                width: 100%;
+                padding: 40px 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 10px;
+            }
+
+            .folder {
+                color: white;
+                cursor: pointer;
+                font-size: 16px;
+            }
         </style>
         `
 
@@ -62,7 +77,16 @@ looker.plugins.visualizations.add({
         this._tableContainer.innerHTML = "";
         const homeContainer = document.createElement('div');
         homeContainer.className = "home-container";
-        create_menu(queryResponse);
+
+
+        // 1. Pega a chave do campo "Grupos Pasta"
+        const foldersField = queryResponse.fields.dimension_like.find(f => f.label === "Grupos Pasta");
+        // 2. Extrai os valores da dimensão
+        let folders = data.map(row => row[foldersField.name].value);
+        // Eliminar os duplicados
+        folders = [...new Set(folders)];
+
+        create_menu();
 
         console.log(queryResponse)
         console.log(data)
@@ -70,7 +94,7 @@ looker.plugins.visualizations.add({
         this._tableContainer.appendChild(homeContainer);
         done();
 
-        function create_menu(queryResponse) {
+        function create_menu() {
             const menuContainer = document.createElement('div');
             menuContainer.classList.add('menu-container');
             
@@ -80,7 +104,14 @@ looker.plugins.visualizations.add({
             menuContainer.appendChild(logoImg)
 
             const listFoldersDiv = document.createElement('ul');
-            listFoldersDiv.classList = 'listFoldersDiv';
+            listFoldersDiv.classList = 'list-folders';
+            
+            pastas.forEach(pasta => {
+                const li = document.createElement('li');
+                li.textContent = pasta;
+                li.classList.add('folder')
+                listFoldersDiv.appendChild(li);
+            });
 
 
             menuContainer.appendChild(listFoldersDiv);
