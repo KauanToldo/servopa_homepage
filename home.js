@@ -41,16 +41,15 @@ looker.plugins.visualizations.add({
             .menu-container {
                 height: 100vh;
                 width: 300px;
-                padding: 30px 30px;
                 background-color: #29479F;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
             }
 
             #logo {
                 width: 150px;
+                margin-top: 40px
             }
         </style>
         `
