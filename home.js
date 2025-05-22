@@ -82,7 +82,8 @@ looker.plugins.visualizations.add({
             }
 
             .folder-icon {
-                width: 16px
+                width: 16px;
+                filter: brightness(0) invert(1);
             }
 
         </style>
@@ -131,7 +132,7 @@ looker.plugins.visualizations.add({
 
                 const folderIcon = document.createElement('img')
                 folderIcon.src = "https://cdn-icons-png.flaticon.com/512/9573/9573247.png"
-                folderIcon.class = 'folder-icon'
+                folderIcon.classList = 'folder-icon'
 
                 const li = document.createElement('li');
                 li.textContent = folder;
