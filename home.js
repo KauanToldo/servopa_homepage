@@ -54,7 +54,7 @@ looker.plugins.visualizations.add({
 
             .list-folders {
                 width: 100%;
-                padding: 40px 0px 0px 40px;
+                padding: 40px 0px 0px 100px;
                 display: flex;
                 flex-direction: column;
                 align-items: start;
