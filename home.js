@@ -54,7 +54,7 @@ looker.plugins.visualizations.add({
 
             .list-folders {
                 width: 100%;
-                margin: 40px 0px 0px 30px;
+                margin: 100px 0px 0px 60px;
                 display: flex;
                 flex-direction: column;
                 align-items: start;
@@ -66,8 +66,14 @@ looker.plugins.visualizations.add({
                 cursor: pointer;
                 font-size: 16px;
                 list-style: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             }
+
+            .line {
+                background-color:rgba(255, 255, 255, 0.4);
+                height: 1px;
+                width: 150px;
+            }
+
         </style>
         `
 
@@ -112,7 +118,10 @@ looker.plugins.visualizations.add({
                 const li = document.createElement('li');
                 li.textContent = folder;
                 li.classList.add('folder')
+                const line = document.createElement("div")
+                line.classList.add('line')
                 listFoldersDiv.appendChild(li);
+                listFoldersDiv.appendChild(line);
             });
 
 
