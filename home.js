@@ -88,15 +88,18 @@ looker.plugins.visualizations.add({
 
             .titles-div {
                 margin-left: 100px;
+                margin-top: 50px;
             }
 
             .subtitle {
                 font-size: 12px;
+                margin: 0px;
             }
 
             .title {
                 font-size: 32px;
                 font-weight: bold;
+                margin-top: 15px;
             }
 
         </style>
