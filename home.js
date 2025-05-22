@@ -1,3 +1,5 @@
+import 'menu.js';
+
 looker.plugins.visualizations.add({
     id: "servopa_homepage",
     label: "Homepage",
@@ -28,7 +30,7 @@ looker.plugins.visualizations.add({
                 cursor: pointer;
             }
 
-            .menu-container {
+            .home-container {
                 width: 100%; 
                 min-height: 100vh; 
                 font-family: 'Montserrat', sans-serif; 
@@ -40,6 +42,12 @@ looker.plugins.visualizations.add({
                 background-size: cover;
                 background-repeat: no-repeat;
             }
+            
+            .menu-container {
+                height: 100vh;
+                width: 300px;
+                background-color: #29479F;
+            }
         </style>
         `
 
@@ -49,15 +57,14 @@ looker.plugins.visualizations.add({
     updateAsync: function(data, element, config, queryResponse, details, done) {
         this.clearErrors();
         this._tableContainer.innerHTML = "";
-        const menuContainer = document.createElement('div');
-        menuContainer.className = "menu-container";
+        const homeContainer = document.createElement('div');
+        homeContainer.className = "home-container";
+        create_menu(queryResponse);
 
-        console.log(queryResponse)
+        console.log(queryResponse, homeContainer)
         console.log(data)
 
-
-
-        this._tableContainer.appendChild(menuContainer);
+        this._tableContainer.appendChild(homeContainer);
         done();
 
 }});
