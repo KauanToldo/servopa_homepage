@@ -5,7 +5,7 @@ looker.plugins.visualizations.add({
       
     },
     create: function(element, config) {
-      this._tableContainer.innerHTML = `
+      element.innerHTML = `
         <style>
             #vis {
                 margin: 0 !important;
