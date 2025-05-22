@@ -59,16 +59,17 @@ looker.plugins.visualizations.add({
         homeContainer.className = "home-container";
         create_menu(queryResponse);
 
-        console.log(queryResponse, homeContainer)
+        console.log(queryResponse)
         console.log(data)
 
         this._tableContainer.appendChild(homeContainer);
         done();
 
+        function create_menu(queryResponse) {
+            const menuContainer = document.createElement('div');
+            menuContainer.classList.add('menu-container');
+            homeContainer.appendChild(menuContainer);
+        }
+
 }});
 
-function create_menu(queryResponse, homeContainer) {
-    const menuContainer = document.createElement('div');
-    menuContainer.classList.add('menu-container');
-    homeContainer.appendChild(menuContainer);
-}
