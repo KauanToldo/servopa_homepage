@@ -58,7 +58,6 @@ looker.plugins.visualizations.add({
                 display: flex;
                 flex-direction: column;
                 align-items: start;
-                gap: 10px;
             }
 
             .folder {
@@ -66,12 +65,14 @@ looker.plugins.visualizations.add({
                 cursor: pointer;
                 font-size: 16px;
                 list-style: none;
+                margin-bottom: 10px
             }
 
             .line {
                 background-color:rgba(255, 255, 255, 0.4);
                 height: 1px;
                 width: 150px;
+                margin-bottom: 30px;
             }
 
         </style>
