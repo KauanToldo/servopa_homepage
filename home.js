@@ -131,7 +131,7 @@ looker.plugins.visualizations.add({
                 folderDiv.classList = 'folder-div'
 
                 const folderIcon = document.createElement('img')
-                folderIcon.src = "./folder_icon.svg"
+                folderIcon.src = "https://kauantoldo.github.io/servopa_homepage/folder_icon.svg"
                 folderIcon.classList = 'folder-icon'
 
                 const li = document.createElement('li');
