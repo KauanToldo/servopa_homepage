@@ -32,10 +32,7 @@ looker.plugins.visualizations.add({
                 width: 100%; 
                 min-height: 100vh; 
                 font-family: 'Montserrat', sans-serif; 
-                display: flex; 
-                justify-content: center; 
-                align-items: center;
-                background-image: url(fundo.png);
+                background-image: url(https://kauantoldo.github.io/servopa_homepage/fundo.png);
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
