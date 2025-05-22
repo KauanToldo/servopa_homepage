@@ -75,6 +75,16 @@ looker.plugins.visualizations.add({
                 margin-bottom: 30px;
             }
 
+            .folder-div {
+                display: flex;
+                align-item: center;
+                gap: 10px;
+            }
+
+            .folder-icon {
+                width: 16px
+            }
+
         </style>
         `
 
@@ -116,12 +126,23 @@ looker.plugins.visualizations.add({
             listFoldersDiv.classList = 'list-folders';
             
             folders.forEach(folder => {
+                const folderDiv = document.createElement('div')
+                folderDiv.classList = 'folder-div'
+
+                const folderIcon = document.createElement('img')
+                folderIcon.src = "https://cdn-icons-png.flaticon.com/512/9573/9573247.png"
+                folderIcon.class = 'folder-icon'
+
                 const li = document.createElement('li');
                 li.textContent = folder;
                 li.classList.add('folder')
+
                 const line = document.createElement("div")
                 line.classList.add('line')
-                listFoldersDiv.appendChild(li);
+
+                folderDiv.appendChild(folderIcon)
+                folderDiv.appendChild(li);
+                listFoldersDiv.appendChild(folderDiv);
                 listFoldersDiv.appendChild(line);
             });
 
