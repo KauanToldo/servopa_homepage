@@ -36,6 +36,7 @@ looker.plugins.visualizations.add({
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
+                display: flex;
             }
             
             .menu-container {
@@ -82,8 +83,20 @@ looker.plugins.visualizations.add({
             }
 
             .folder-icon {
-            
-                
+                margin-bottom: 10px;
+            }
+
+            .titles-div {
+                margin-left: 100px;
+            }
+
+            .subtitle {
+                font-size: 12px;
+            }
+
+            .title {
+                font-size: 32px;
+                font-weight: bold;
             }
 
         </style>
@@ -107,6 +120,21 @@ looker.plugins.visualizations.add({
         folders = [...new Set(folders)];
 
         create_menu();
+
+        const titlesDiv = document.createElement("div")
+        titlesDiv.className = "titles-div";
+
+        const subtitle = document.createElement('h2');
+        const title = document.createElement('h1');
+        subtitle.classList = "subtitle";
+        title.classList = "title";
+        subtitle.textContent = "Olá, seja bem vindo(a) ao"
+        title.textContent = "Painel Geral"
+
+        titlesDiv.appendChild(subtitle)
+        titlesDiv.appendChild(title)
+
+        homeContainer.appendChild(titlesDiv)
 
         console.log(queryResponse)
         console.log(data)
