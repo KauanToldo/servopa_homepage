@@ -89,6 +89,7 @@ looker.plugins.visualizations.add({
             .titles-div {
                 margin-left: 100px;
                 margin-top: 50px;
+                margin-right: 50px;
             }
 
             .subtitle {
@@ -109,6 +110,13 @@ looker.plugins.visualizations.add({
                 align-items: center;
                 justify-content: center;
                 color:rgb(206, 206, 206);
+            }
+
+            .body-page {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
             }
 
         </style>
@@ -133,6 +141,10 @@ looker.plugins.visualizations.add({
 
         create_menu();
 
+        const body = document.createElement('div')
+        body.classList = "body-page"
+
+
         const titlesDiv = document.createElement("div")
         titlesDiv.className = "titles-div";
 
@@ -146,12 +158,14 @@ looker.plugins.visualizations.add({
         titlesDiv.appendChild(subtitle)
         titlesDiv.appendChild(title)
 
-        homeContainer.appendChild(titlesDiv)
+        body.appendChild(titlesDiv)
 
         const cardsContainer = document.createElement('div');
         cardsContainer.classList = "cards-container";
         cardsContainer.innerHTML = "Selecione uma pasta para visualizar o conteúdo";
-        homeContainer.appendChild(cardsContainer);
+        body.appendChild(cardsContainer);
+
+        homeContainer.appendChild(body)
 
 
         console.log(queryResponse)
