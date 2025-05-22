@@ -1,5 +1,3 @@
-import 'menu.js';
-
 looker.plugins.visualizations.add({
     id: "servopa_homepage",
     label: "Homepage",
@@ -68,3 +66,9 @@ looker.plugins.visualizations.add({
         done();
 
 }});
+
+function create_menu(queryResponse, homeContainer) {
+    const menuContainer = document.createElement('div');
+    menuContainer.classList.add('menu-container');
+    homeContainer.appendChild(menuContainer);
+}
