@@ -111,7 +111,9 @@ looker.plugins.visualizations.add({
                 const li = document.createElement('li');
                 li.textContent = folder;
                 li.classList.add('folder')
+                const line = document.createElement('hr');
                 listFoldersDiv.appendChild(li);
+                listFoldersDiv.appendChild(line);
             });
 
 
