@@ -106,9 +106,9 @@ looker.plugins.visualizations.add({
             const listFoldersDiv = document.createElement('ul');
             listFoldersDiv.classList = 'list-folders';
             
-            pastas.forEach(pasta => {
+            folders.forEach(folder => {
                 const li = document.createElement('li');
-                li.textContent = pasta;
+                li.textContent = folder;
                 li.classList.add('folder')
                 listFoldersDiv.appendChild(li);
             });
