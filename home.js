@@ -35,14 +35,14 @@ looker.plugins.visualizations.add({
                 display: flex; 
                 justify-content: center; 
                 align-items: center;
-                background-image: url(https://storage.googleapis.com/looker_styles_servopa/imagens/fundo_servopa.png);
+                background-image: url(fundo.png);
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
             }
         </style>
         `
-        
+
         this._tableContainer = element.appendChild(document.createElement("div"));
     },
 
