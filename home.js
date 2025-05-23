@@ -355,7 +355,7 @@ looker.plugins.visualizations.add({
             searchContainer.appendChild(searchIcon);
             searchContainer.appendChild(searchInput);
 
-            headerPage.appendChild(searchContainer);
+            header.appendChild(searchContainer);
         }
 
 }});
