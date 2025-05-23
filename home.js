@@ -80,9 +80,14 @@ looker.plugins.visualizations.add({
 
             .folder-div {
                 display: flex;
-                align-item: center;
+                align-items: center;
                 gap: 10px;
                 padding: 20px 30px;
+                transition: .2s ease-in-out;
+            }
+
+            .folder-div:hover {
+                background-color:rgb(29, 50, 112);
             }
 
             .titles-div {
