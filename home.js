@@ -192,6 +192,10 @@ looker.plugins.visualizations.add({
                 font-size: 14px;
             }
 
+            .search-container:focus {
+                border: 1px solid black;
+            }
+
         </style>
         `
 
