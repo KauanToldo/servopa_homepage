@@ -121,6 +121,42 @@ looker.plugins.visualizations.add({
                 flex-direction: column;
             }
 
+            .card {
+                background-color: #ffffff; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+                border-radius: 12px; 
+                width: 300px; 
+                overflow: hidden; 
+                cursor: pointer;
+            }
+
+            .card-img {
+                width: 100%; 
+                height: 150px; 
+                object-fit: cover;
+            }
+
+            .card-info-div {
+                padding: 20px; 
+                text-align: center; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                gap: 5px;
+            }
+
+            .title-card {
+                font-size: 20px; 
+                margin-bottom: 8px; 
+                font-weight: bold; 
+                color: #333;
+            }
+
+            .icon-card {
+                width: 25px;
+                height: 25px;
+            }
+
         </style>
         `
 
@@ -233,26 +269,23 @@ looker.plugins.visualizations.add({
                 const card = document.createElement('div');
                 card.classList = 'card';
                 card.id = `card${index}`;
-                card.style = "background-color: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; width: 350px; overflow: hidden; cursor: pointer;";
 
                 const img = document.createElement('img');
                 img.src = row['paineis.imagem'].value
                 img.alt = "Imagem do painel";
-                img.style = "width: 100%; height: 200px; object-fit: cover;";
+                img.classList = "card-img";
 
                 const infoDiv = document.createElement('div');
-                infoDiv.style = "padding: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px;";
+                infoDiv.classList = 'card-info-div';
 
                 const titleSpan = document.createElement('span');
-                titleSpan.style = "font-size: 20px; margin-bottom: 8px; font-weight: bold; color: #333;";
+                titleSpan.classList = 'title-card'
                 titleSpan.textContent = row['paineis.painel'].value;
 
                 const icon = document.createElement('img');
                 icon.src = "https://cdn-icons-png.flaticon.com/512/5422/5422411.png";
+                icon.classList = 'icon-card'
                 icon.alt = "Redirecionar";
-                icon.width = 25;
-                icon.height = 25;
-                icon.style = "margin-top: -4px;";
 
                 infoDiv.appendChild(titleSpan);
                 infoDiv.appendChild(icon);
