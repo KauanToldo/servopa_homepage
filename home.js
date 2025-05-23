@@ -208,8 +208,8 @@ looker.plugins.visualizations.add({
 
 
                 folderDiv.addEventListener('click', () => {
-                load_cards(folder);
-            });
+                    load_cards(folder);
+                });
 
             });
 
@@ -218,49 +218,51 @@ looker.plugins.visualizations.add({
         }
 
         function load_cards(selectedFolder) {
-        cardsContainer.innerHTML = "";  // limpa os cards anteriores
+            cardsContainer.innerHTML = "";  // limpa os cards anteriores
 
-        const filteredRows = data.filter(row => row[foldersField.name].value === selectedFolder);
+            const filteredRows = data.filter(row => row['grupos.pasta'].value === selectedFolder);
 
-        if (filteredRows.length === 0) {
-            cardsContainer.innerHTML = "Nenhum painel disponível para esta pasta.";
-            return;
+            if (filteredRows.length === 0) {
+                cardsContainer.innerHTML = "Nenhum painel disponível para esta pasta.";
+                return;
+            }
+
+            filteredRows.forEach((row, index) => {
+                const card = document.createElement('div');
+                card.classList = 'card';
+                card.id = `card${index}`;
+                card.style = "background-color: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; width: 350px; overflow: hidden;";
+
+                const img = document.createElement('img');
+                img.src = "https://via.placeholder.com/350x200";  // Ou, se tiver campo de imagem, coloque aqui
+                img.alt = "Imagem do painel";
+                img.style = "width: 100%; height: 200px; object-fit: cover;";
+
+                const infoDiv = document.createElement('div');
+                infoDiv.style = "padding: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px;";
+
+                const link = document.createElement('a');
+                link.href = row['paineis.link'].value;
+                link.target = "_blank";
+                link.style = "display: flex; align-items: center; font-size: 20px; margin-bottom: 8px; font-weight: bold; color: #333; text-decoration: none; cursor: pointer;";
+                link.textContent = row['paineis.painel'].value;
+
+                const icon = document.createElement('img');
+                icon.src = "https://cdn-icons-png.flaticon.com/512/5422/5422411.png";
+                icon.alt = "Redirecionar";
+                icon.width = 25;
+                icon.height = 25;
+                icon.style = "margin-top: -4px;";
+
+                infoDiv.appendChild(link);
+                infoDiv.appendChild(icon);
+
+                card.appendChild(img);
+                card.appendChild(infoDiv);
+
+                cardsContainer.appendChild(card);
+            });
         }
-
-        filteredRows.forEach((row, index) => {
-            const card = document.createElement('div');
-            card.classList = 'card';
-            card.id = `card${index}`;
-            card.style = "background-color: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; width: 350px; overflow: hidden;";
-
-            // const img = document.createElement('img');
-            // img.src = row[].value || "https://via.placeholder.com/350x200";  // coloca o link correto da imagem ou um placeholder
-            // img.alt = "Imagem do painel";
-            // img.style = "width: 100%; height: 200px; object-fit: cover;";
-
-            const infoDiv = document.createElement('div');
-            infoDiv.style = "padding: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px;";
-
-            const titleCard = document.createElement('span');
-            titleCard.style = "display: flex; align-items: center; font-size: 20px; margin-bottom: 8px; font-weight: bold; color: #333; text-decoration: none; cursor: pointer;";
-            titleCard.textContent = row[paineis.painel].value;
-
-            const icon = document.createElement('img');
-            icon.src = "https://cdn-icons-png.flaticon.com/512/5422/5422411.png";
-            icon.alt = "Redirecionar";
-            icon.width = 25;
-            icon.height = 25;
-            icon.style = "margin-top: -4px;";
-
-            infoDiv.appendChild(link);
-            infoDiv.appendChild(icon);
-
-            card.appendChild(img);
-            card.appendChild(infoDiv);
-
-            cardsContainer.appendChild(card);
-        });
-    }
 
 }});
 
