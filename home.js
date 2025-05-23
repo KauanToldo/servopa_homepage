@@ -236,7 +236,7 @@ looker.plugins.visualizations.add({
                 card.style = "background-color: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; width: 350px; overflow: hidden; cursor: pointer;";
 
                 const img = document.createElement('img');
-                img.src = "https://via.placeholder.com/350x200";  // Substitua se tiver imagens
+                img.src = row['paineis.imagem'].value
                 img.alt = "Imagem do painel";
                 img.style = "width: 100%; height: 200px; object-fit: cover;";
 
