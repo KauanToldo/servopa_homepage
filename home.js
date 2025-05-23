@@ -103,6 +103,7 @@ looker.plugins.visualizations.add({
             .title {
                 font-size: 32px;
                 font-weight: bold;
+                margin: 0;
                 margin-top: 2px;
             }
 
@@ -165,16 +166,18 @@ looker.plugins.visualizations.add({
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 50px;
-                margin-bottom: 15px;
+                margin-bottom: 50px;
             }
 
             .search-container {
                 display: flex;
                 align-items: center;
                 border: 1px solid #ccc;
-                border-radius: 20px;
+                border-radius: 50px;
                 overflow: hidden;
                 width: 50%;
+                padding: 5px 15px;
+                margin-right: 30px;
             }
                 
             .search-icon {
