@@ -71,13 +71,6 @@ looker.plugins.visualizations.add({
                 list-style: none;
             }
 
-            // .line {
-            //     background-color:rgba(255, 255, 255, 0.4);
-            //     height: 1px;
-            //     width: 150px;
-            //     margin-bottom: 30px;
-            // }
-
             .folder-div {
                 display: flex;
                 align-items: center;
@@ -190,10 +183,6 @@ looker.plugins.visualizations.add({
                 padding: 8px 12px;
                 flex: 1;
                 font-size: 14px;
-            }
-
-            .search-container:focus {
-                border: 1px solid black;
             }
 
         </style>
@@ -363,6 +352,22 @@ looker.plugins.visualizations.add({
             searchContainer.appendChild(searchInput);
 
             header.appendChild(searchContainer);
+
+            searchInput.addEventListener('focus', () => {
+                searchContainer.style.border = '1px solid black';
+            });
+
+            // Quando perde o foco
+            searchInput.addEventListener('blur', () => {
+                searchContainer.style.border = '1px solid transparent';
+            });
+
+            // Quando o usuário pressiona Enter
+            searchInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    searchContainer.style.border = '1px solid transparent';
+                }
+            });
         }
 
 }});
