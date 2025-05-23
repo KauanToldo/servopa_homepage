@@ -46,6 +46,8 @@ looker.plugins.visualizations.add({
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                position: sticky;
+                top: 0;
             }
 
             #logo {
