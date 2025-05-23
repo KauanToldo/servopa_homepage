@@ -92,8 +92,6 @@ looker.plugins.visualizations.add({
 
             .titles-div {
                 padding-left: 50px;
-                margin-top: 50px;
-                margin-right: 50px;
             }
 
             .subtitle {
@@ -161,6 +159,15 @@ looker.plugins.visualizations.add({
                 height: 25px;
             }
 
+            .header-page {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 50px;
+                margin-right: 50px;
+            }
+
         </style>
         `
 
@@ -186,6 +193,8 @@ looker.plugins.visualizations.add({
         const body = document.createElement('div')
         body.classList = "body-page"
 
+        const header = document.createElement('div')
+        header.classList = "header-page"
 
         const titlesDiv = document.createElement("div")
         titlesDiv.className = "titles-div";
@@ -200,7 +209,9 @@ looker.plugins.visualizations.add({
         titlesDiv.appendChild(subtitle)
         titlesDiv.appendChild(title)
 
-        body.appendChild(titlesDiv)
+        header.appendChild(titlesDiv)
+
+        body.appendChild(header)
 
         const cardsContainer = document.createElement('div');
         cardsContainer.classList = "cards-container";
