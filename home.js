@@ -108,8 +108,10 @@ looker.plugins.visualizations.add({
                 height: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                flex-wrap: wrap;
+                gap: 25px;
                 color:rgb(206, 206, 206);
+                margin-left: 100px;
             }
 
             .body-page {
