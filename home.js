@@ -344,11 +344,11 @@ looker.plugins.visualizations.add({
             searchContainer.classList = 'search-container';
 
             const searchIcon = document.createElement('img');
-            searchIcon.href = "https://cdn-icons-png.flaticon.com/512/622/622669.png"
+            searchIcon.src = "https://cdn-icons-png.flaticon.com/512/622/622669.png"
             searchIcon.classList = 'search-icon';
 
             const searchInput = document.createElement('input');
-            searchInput.type = 'search-input';
+            searchInput.classList = 'search-input';
             searchInput.type = 'text';
             searchInput.placeholder = 'Search';
 
