@@ -262,6 +262,8 @@ looker.plugins.visualizations.add({
 
             const filteredRows = data.filter(row => row['grupos.pasta'].value === selectedFolder);
 
+            title.textContent = `Painel de ${selectedFolder}`;
+
             if (filteredRows.length === 0) {
                 cardsContainer.innerHTML = "Nenhum painel disponível para esta pasta.";
                 return;
