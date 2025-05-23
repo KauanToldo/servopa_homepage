@@ -95,12 +95,13 @@ looker.plugins.visualizations.add({
             .subtitle {
                 font-size: 12px;
                 margin: 0px;
+                font-weight: normal;
             }
 
             .title {
                 font-size: 32px;
                 font-weight: bold;
-                margin-top: 15px;
+                margin-top: 2px;
             }
 
             .cards-container {
@@ -137,7 +138,7 @@ looker.plugins.visualizations.add({
             }
 
             .card-info-div {
-                padding: 20px; 
+                padding: 10px; 
                 text-align: center; 
                 display: flex; 
                 align-items: center; 
@@ -146,8 +147,7 @@ looker.plugins.visualizations.add({
             }
 
             .title-card {
-                font-size: 20px; 
-                margin-bottom: 8px; 
+                font-size: 18px; 
                 font-weight: bold; 
                 color: #333;
             }
