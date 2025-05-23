@@ -359,13 +359,13 @@ looker.plugins.visualizations.add({
 
             // Quando perde o foco
             searchInput.addEventListener('blur', () => {
-                searchContainer.style.border = '1px solid transparent';
+                searchContainer.style.border = '1px solid #ccc';
             });
 
             // Quando o usuário pressiona Enter
             searchInput.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
-                    searchContainer.style.border = '1px solid transparent';
+                    searchContainer.style.border = '1px solid #ccc';
                 }
             });
         }
