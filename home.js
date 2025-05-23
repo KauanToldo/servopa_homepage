@@ -57,10 +57,11 @@ looker.plugins.visualizations.add({
 
             .list-folders {
                 width: 100%;
-                margin: 100px 0px 0px 60px;
                 display: flex;
                 flex-direction: column;
-                align-items: start;
+                padding: 0;
+                margin: 0;
+                margin-top: 80px;
             }
 
             .folder {
@@ -68,24 +69,20 @@ looker.plugins.visualizations.add({
                 cursor: pointer;
                 font-size: 16px;
                 list-style: none;
-                margin-bottom: 10px
             }
 
-            .line {
-                background-color:rgba(255, 255, 255, 0.4);
-                height: 1px;
-                width: 150px;
-                margin-bottom: 30px;
-            }
+            // .line {
+            //     background-color:rgba(255, 255, 255, 0.4);
+            //     height: 1px;
+            //     width: 150px;
+            //     margin-bottom: 30px;
+            // }
 
             .folder-div {
                 display: flex;
                 align-item: center;
                 gap: 10px;
-            }
-
-            .folder-icon {
-                margin-bottom: 10px;
+                padding: 20px 30px;
             }
 
             .titles-div {
@@ -238,13 +235,10 @@ looker.plugins.visualizations.add({
                 li.textContent = folder;
                 li.classList.add('folder')
 
-                const line = document.createElement("div")
-                line.classList.add('line')
 
                 folderDiv.appendChild(folderIcon)
                 folderDiv.appendChild(li);
                 listFoldersDiv.appendChild(folderDiv);
-                listFoldersDiv.appendChild(line);
 
 
                 folderDiv.addEventListener('click', () => {
