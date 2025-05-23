@@ -104,14 +104,13 @@ looker.plugins.visualizations.add({
             }
 
             .cards-container {
-                width: 100%;
                 height: 100%;
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 25px;
                 color:rgb(206, 206, 206);
-                margin-left: 100px;
+                padding-right: 50px;
             }
 
             .body-page {
