@@ -233,21 +233,19 @@ looker.plugins.visualizations.add({
                 const card = document.createElement('div');
                 card.classList = 'card';
                 card.id = `card${index}`;
-                card.style = "background-color: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; width: 350px; overflow: hidden;";
+                card.style = "background-color: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; width: 350px; overflow: hidden; cursor: pointer;";
 
                 const img = document.createElement('img');
-                img.src = "https://via.placeholder.com/350x200";  // Ou, se tiver campo de imagem, coloque aqui
+                img.src = "https://via.placeholder.com/350x200";  // Substitua se tiver imagens
                 img.alt = "Imagem do painel";
                 img.style = "width: 100%; height: 200px; object-fit: cover;";
 
                 const infoDiv = document.createElement('div');
                 infoDiv.style = "padding: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px;";
 
-                const link = document.createElement('a');
-                link.href = row['paineis.link'].value;
-                link.target = "_blank";
-                link.style = "display: flex; align-items: center; font-size: 20px; margin-bottom: 8px; font-weight: bold; color: #333; text-decoration: none; cursor: pointer;";
-                link.textContent = row['paineis.painel'].value;
+                const titleSpan = document.createElement('span');
+                titleSpan.style = "font-size: 20px; margin-bottom: 8px; font-weight: bold; color: #333;";
+                titleSpan.textContent = row['paineis.painel'].value;
 
                 const icon = document.createElement('img');
                 icon.src = "https://cdn-icons-png.flaticon.com/512/5422/5422411.png";
@@ -256,11 +254,16 @@ looker.plugins.visualizations.add({
                 icon.height = 25;
                 icon.style = "margin-top: -4px;";
 
-                infoDiv.appendChild(link);
+                infoDiv.appendChild(titleSpan);
                 infoDiv.appendChild(icon);
 
                 card.appendChild(img);
                 card.appendChild(infoDiv);
+
+                // Torna o card inteiro clicável
+                card.addEventListener('click', function() {
+                    window.open(row['paineis.link'].value, '_blank');
+                });
 
                 cardsContainer.appendChild(card);
             });
