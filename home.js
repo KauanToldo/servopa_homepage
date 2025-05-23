@@ -205,18 +205,46 @@ looker.plugins.visualizations.add({
                 folderDiv.appendChild(li);
                 listFoldersDiv.appendChild(folderDiv);
                 listFoldersDiv.appendChild(line);
+
+
+                folderDiv.addEventListener('click', () => {
+                load_cards(folder);
             });
 
+            });
 
             menuContainer.appendChild(listFoldersDiv);
-
-
             homeContainer.appendChild(menuContainer);
         }
 
-        function load_cards() {
+        function load_cards(selectedFolder) {
+        cardsContainer.innerHTML = "";  // limpa os cards anteriores
 
+        const filteredRows = data.filter(row => row[foldersField.name].value === selectedFolder);
+
+        if (filteredRows.length === 0) {
+            cardsContainer.innerHTML = "Nenhum painel disponível para esta pasta.";
+            return;
         }
+
+        filteredRows.forEach(row => {
+            const card = document.createElement('div');
+            card.classList = 'card';
+
+            const cardTitle = document.createElement('h3');
+            cardTitle.textContent = row[panelField.name].value;
+
+            const cardLink = document.createElement('a');
+            cardLink.href = row[linkField.name].value;
+            cardLink.target = "_blank";
+            cardLink.textContent = "Abrir Painel";
+
+            card.appendChild(cardTitle);
+            card.appendChild(cardLink);
+
+            cardsContainer.appendChild(card);
+        });
+    }
 
 }});
 
