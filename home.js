@@ -165,7 +165,28 @@ looker.plugins.visualizations.add({
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 50px;
-                margin-right: 50px;
+                margin-bottom: 15px;
+            }
+
+            .search-container {
+                display: flex;
+                align-items: center;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                overflow: hidden;
+                width: 50%;
+            }
+                
+            .search-icon {
+                width: 15px;
+            }
+
+            .search-input {
+                border: none;
+                outline: none;
+                padding: 8px 12px;
+                flex: 1;
+                font-size: 14px;
             }
 
         </style>
@@ -210,6 +231,8 @@ looker.plugins.visualizations.add({
         titlesDiv.appendChild(title)
 
         header.appendChild(titlesDiv)
+
+        create_search_bar();
 
         body.appendChild(header)
 
@@ -314,6 +337,25 @@ looker.plugins.visualizations.add({
 
                 cardsContainer.appendChild(card);
             });
+        }
+
+        function create_search_bar() {
+            const searchContainer = document.createElement('div');
+            searchContainer.classList = 'search-container';
+
+            const searchIcon = document.createElement('img');
+            searchIcon.href = "https://cdn-icons-png.flaticon.com/512/622/622669.png"
+            searchIcon.classList = 'search-icon';
+
+            const searchInput = document.createElement('input');
+            searchInput.type = 'search-input';
+            searchInput.type = 'text';
+            searchInput.placeholder = 'Search';
+
+            searchContainer.appendChild(searchIcon);
+            searchContainer.appendChild(searchInput);
+
+            headerPage.appendChild(searchContainer);
         }
 
 }});
