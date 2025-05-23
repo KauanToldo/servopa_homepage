@@ -87,7 +87,7 @@ looker.plugins.visualizations.add({
             }
 
             .titles-div {
-                margin-left: 100px;
+                padding-left: 50px;
                 margin-top: 50px;
                 margin-right: 50px;
             }
@@ -111,6 +111,7 @@ looker.plugins.visualizations.add({
                 gap: 25px;
                 color:rgb(206, 206, 206);
                 padding-right: 50px;
+                padding-left: 50px;
             }
 
             .body-page {
