@@ -234,7 +234,7 @@ looker.plugins.visualizations.add({
 
         const cardsContainer = document.createElement('div');
         cardsContainer.classList = "cards-container";
-        cardsContainer.innerHTML = "Selecione uma pasta para visualizar o conteúdo";
+        load_cards();
         body.appendChild(cardsContainer);
 
         homeContainer.appendChild(body)
@@ -286,12 +286,18 @@ looker.plugins.visualizations.add({
             homeContainer.appendChild(menuContainer);
         }
 
-        function load_cards(selectedFolder) {
+        function load_cards(selectedFolder = null) {
             cardsContainer.innerHTML = "";  // limpa os cards anteriores
 
-            const filteredRows = data.filter(row => row['grupos.pasta'].value === selectedFolder);
+            let filteredRows;
 
-            title.textContent = `Painel de ${selectedFolder}`;
+            if (selectedFolder) {
+                filteredRows = data.filter(row => row['grupos.pasta'].value === selectedFolder);
+            } else {
+                filteredRows = data;
+            }
+
+            title.textContent = `Painel: ${selectedFolder ? selectedFolder : 'Geral'}`;
 
             if (filteredRows.length === 0) {
                 cardsContainer.innerHTML = "Nenhum painel disponível para esta pasta.";
